@@ -1,0 +1,20 @@
+<div class="container">
+
+  <h1 class="header"> My Website </h2>
+
+  <form action="/signin" method="post">
+    <input type="text" name="name" placeholder="Username" />
+    <input type="password" name="password" placeholder="Password" />
+    <input type="submit" value="Login" class="btn"/>
+  </form>
+
+  <p>Don't have an account? Click <a href="/signup">here</a></p>
+
+  <% if session[:message] %>
+    <div class='message'>
+      <%= session[:message] %>
+      <% session[:message] = nil %>
+    </div>
+  <% end %>
+
+</div>

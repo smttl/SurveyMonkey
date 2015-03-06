@@ -1,0 +1,47 @@
+body {
+    font-family: HelveticaNeue-Light;
+    font-size: 90%;
+    line-height: 90%;
+}
+
+.container {
+  margin: 200px auto;
+  width: 600px;
+  padding: 0px 20px 20px 20px;
+  border: none;
+  text-align: center;
+}
+
+th {
+  text-align: left;
+}
+
+a {
+    text-decoration: none;
+    font-weight: bold;
+    color: black;
+}
+
+.message {
+    color: #FF746B;
+}
+
+.btn {
+    background-color: white;
+    border: 1px solid black;
+    color: #4183E8;
+    border-color: #4183E8;
+}
+
+.intro {
+  color: #4183E8;
+}
+
+.entry {
+  padding: 10px 10px 10px 10px;
+  margin: 0 0 2px 0;
+}
+
+#linebreak {
+  border-color: #E1E9FC;
+}
