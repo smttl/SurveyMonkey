@@ -2,7 +2,8 @@ get '/surveys/new' do
   erb :'survey/new'
 end
 
-post '/surveys' do
+
+post '/surveys/:id' do
   @survey = Survey.create(params[:survey])
   redirect 'users/<%= @user.id %>'
 end
