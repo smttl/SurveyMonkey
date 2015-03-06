@@ -4,6 +4,6 @@ class Question < ActiveRecord::Base
   has_many :responses
 
   def all_choices
-    choices.all
+    self.choices.all
   end
 end

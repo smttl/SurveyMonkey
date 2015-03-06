@@ -2,14 +2,13 @@ get '/surveys/new' do
   erb :'survey/new'
 end
 
-
-post '/surveys/:id' do
+post '/surveys' do
   @survey = Survey.create(params[:survey])
   redirect 'users/<%= @user.id %>'
 end
 
 get '/surveys/:id' do
- @survey = Survey.find(id)
+ @survey = Survey.find(params[:id])
  @questions = @survey.questions
  erb :'survey/show'
 end
