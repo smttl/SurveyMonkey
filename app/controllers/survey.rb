@@ -1,10 +1,10 @@
-get '/surveys/new' do
-  erb :'survey/new'
-end
-
 post '/surveys' do
   @survey = Survey.create(params[:survey])
   redirect 'users/<%= @user.id %>'
+end
+
+get '/surveys/new' do
+  erb :form
 end
 
 get '/surveys/:id' do
@@ -18,13 +18,11 @@ delete '/surveys/:id' do
   redirect 'users/<%= @user.id %>'
 end
 
-get '/survey/new' do
-  erb :form
-end
 
-post '/survey/create' do
+post '/surveys/create' do
   survey_title = params[:title]
-  new_survey = Survey.create(title: survey_title)
+  user = User.find(session[:user_id])
+  new_survey = Survey.create(title: survey_title, user: user)
   questions = params[:questions]
   questions.each do |key, value|
     new_question = Question.create(title: value['title'], survey: new_survey)
