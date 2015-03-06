@@ -32,7 +32,9 @@ post '/logout' do
   redirect '/'
 end
 
-get '/users/:user_id' do
-  @user = User.find(params[:user_id])
-  erb :userpage
+get '/users/:id' do
+  @user = User.find(params[:id])
+  @surveys = Survey.all
+  @user_surveys = Survey.where(user_id: params[:id])
+  erb :user_show
 end
