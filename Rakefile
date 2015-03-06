@@ -1,10 +1,19 @@
 require ::File.expand_path('../environment', __FILE__)
 
 require 'rake'
+require 'jasmine'
+
+load 'jasmine/tasks/jasmine.rake'
 
 desc 'Start IRB with application environment loaded'
 task "console" do
     exec "irb -r./environment"
+end
+
+namespace :test do
+ task :jasmine do
+   abort 'No Jasmine run (sudo) gem instal jasmine'
+ end
 end
 
 namespace :generate do
@@ -67,7 +76,7 @@ namespace :db do
   task :seed do
     require APP_ROOT.join('db', 'seeds.rb')
   end
-  
+
   namespace :test do
     desc "Migrate test database"
     task :prepare do
@@ -75,4 +84,3 @@ namespace :db do
     end
   end
 end
-

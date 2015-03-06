@@ -12,6 +12,14 @@ body {
   text-align: center;
 }
 
+.container2 {
+  margin: 200px auto;
+  width: 800px;
+  padding: 0px 20px 20px 20px;
+  border: none;
+  text-align: center;
+}
+
 th {
   text-align: left;
 }

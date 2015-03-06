@@ -32,6 +32,7 @@ post '/logout' do
   redirect '/'
 end
 
+
 get '/users/:id' do
   @user = User.find(params[:id])
   @surveys = Survey.all
