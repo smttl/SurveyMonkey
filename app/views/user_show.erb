@@ -20,6 +20,10 @@
     </p>
   <% end %>
 
+  <form action="/surveys/<%= @user.id %>/new" method="get">
+    <input type="submit" value="Create Survey" class="btn">
+  </form>
+
   <form action="/logout" method="post">
     <input type="submit" value="Logout" class="btn">
   </form>
