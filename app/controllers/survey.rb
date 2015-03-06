@@ -9,6 +9,7 @@ end
 
 get '/surveys/:id' do
  @survey = Survey.find(id)
+ @questions = @survey.questions
  erb :'survey/show'
 end
 

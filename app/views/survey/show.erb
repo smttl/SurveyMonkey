@@ -1,0 +1,12 @@
+<%= @survey.title %>
+
+<form action="/post" method="POST">
+<% @questions.each do |question|%>
+  <%= question.title %>
+    <select name="<%=question.id%>">
+  <% @question.all_choices.each do |choice|%>
+      <option value="<%=choice.id%>"><%=choice.title%></option>
+  </select>
+  <% end %>
+</form>
+
