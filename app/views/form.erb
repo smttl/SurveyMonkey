@@ -1,19 +1,30 @@
+
+<div class="container2" ng-app="textinput" ng-controller="MyController">
+
 <div id="banner">
   <span id="survey_monkey"><a class="banner_text" href="/">SurveyMonkey</a></span>
   <span id="home"><a class="banner_text" href="/">Home</a></span>
   <span id="create_survey"><a class="banner_text" href="/surveys/new">Create Survey</a></span>
   <span id="logout"><a  class="banner_text" href="/logout">Logout</a></span>
 </div>
+  <script>
+  angular.module('textinput', [])
+    .controller('MyController', ['$scope', function($scope) {
+      $scope.coolAngular = {
+        text: '',
+        word:'hey'
+      };
+    }]);
+  </script>
 
-<div class="container2">
-
-  <h2 class="header"> Create new survey </h2>
+  <h2 class="header"> {{'Creating ' + coolAngular.text+'...'}} </h2>
   <a href="#" class="create_question"> Add question </a>
   <a href="#" class="remove_question" style="display:none"> Remove question </a>
 
   <form action='/surveys/create' method='post' class="form">
     <br><br>
-    <input type="text" name="title" placeholder="Survey Title" />
+    <input type="text" name="title"
+    ng-model="coolAngular.text" placeholder="Survey Title"/>
     <br><br>
     <div class="inputs">
       <div class="input_container">
