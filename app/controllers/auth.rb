@@ -18,7 +18,7 @@ post '/signin' do
 end
 
 get '/signup' do
-  erb :signup
+  erb :signup, layout: false
 end
 
 post '/signup' do
