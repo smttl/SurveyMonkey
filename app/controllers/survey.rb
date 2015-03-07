@@ -13,11 +13,17 @@ get '/surveys/:id' do
  erb :'survey/show'
 end
 
+get '/surveys/:id/stats' do
+ @survey = Survey.find(params[:id])
+ @questions = @survey.questions
+ @responses = Response.where(survey: @survey)
+ erb :'survey/stats'
+end
+
 delete '/surveys/:id' do
   Survey.find(id).destroy
   redirect 'users/<%= @user.id %>'
 end
-
 
 post '/surveys/create' do
   survey_title = params[:title]

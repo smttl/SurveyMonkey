@@ -1,3 +1,10 @@
+<div id="banner">
+  <span id="survey_monkey"><a class="banner_text" href="/">SurveyMonkey</a></span>
+  <span id="home"><a class="banner_text" href="/">Home</a></span>
+  <span id="create_survey"><a class="banner_text" href="/surveys/new">Create Survey</a></span>
+  <span id="logout"><a  class="banner_text" href="/logout">Logout</a></span>
+</div>
+
 <div class="container">
 
 <h2 class = "intro">Welcome <%= @user.name %>!</h2>
@@ -14,19 +21,10 @@
   <div id="right_column">
     <h3>My Surveys</h3>
     <% @user_surveys.each do |survey| %>
-      <p><a href="/surveys/<%= survey.id %>"><%= survey.title %></a></p>
+      <p><a href="/surveys/<%= survey.id %>/stats"><%= survey.title %></a></p>
     <% end %>
   </div>
 
 </div>
-
-  <form action="/surveys/new" method="get">
-    <input type="submit" value="Create Survey" class="btn">
-    <br><br>
-  </form>
-
-  <form action="/logout" method="post">
-    <input type="submit" value="Logout" class="btn">
-  </form>
 
 </div>
