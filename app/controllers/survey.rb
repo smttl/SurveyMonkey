@@ -14,8 +14,8 @@ get '/surveys/:id' do
 end
 
 delete '/surveys/:id' do
-  Survey.find(params[:id]).destroy
-  redirect 'users/<%= @user.id %>'
+  survey = Survey.find(params[:id])
+  redirect "users/<%= @user.id %>"
 end
 
 

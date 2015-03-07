@@ -16,4 +16,9 @@
   <input type="submit" value="submit" class="btn">
 </form>
 
+<form action="/surveys/<%= @survey.id %>" method="POST">
+    <input type="hidden" name="_method" value="DELETE">
+    <input class="btn" type="submit" value="Delete Survey">
+</form>
+
 </div>
