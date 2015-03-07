@@ -20,13 +20,15 @@ body {
   text-align: center;
 }
 
+.input_container {
+}
+
 th {
   text-align: left;
 }
 
 a {
     text-decoration: none;
-    font-weight: bold;
     color: black;
 }
 
@@ -52,4 +54,24 @@ a {
 
 #linebreak {
   border-color: #E1E9FC;
+}
+
+.options {
+  display: inline-block;
+  text-align: left;
+}
+
+
+#left_column, #right_column {
+  display: inline-block;
+  vertical-align: top;
+  padding: 10px 20px 10px 20px;
+}
+
+li {
+  padding-bottom: 10px;
+}
+
+.input {
+  padding-left: 10px;
 }

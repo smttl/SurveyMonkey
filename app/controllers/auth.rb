@@ -36,6 +36,6 @@ end
 get '/users/:id' do
   @user = User.find(params[:id])
   @surveys = Survey.all
-  @user_surveys = Survey.where(user_id: params[:id])
+  @user_surveys = Survey.where(user: @user)
   erb :user_show
 end
