@@ -3,6 +3,8 @@ get '/surveys/new' do
 end
 
 post '/surveys/create' do
+  p params[:questions]
+
   survey_title = params[:title]
   user = User.find(session[:user_id])
   new_survey = Survey.create(title: survey_title, user: user)
@@ -23,10 +25,18 @@ get '/surveys/:id' do
 end
 
 get '/surveys/:id/edit' do
+  @survey = Survey.find(params[:id])
+  @questions = @survey.questions
   erb :'survey/edit'
 end
 
-put '/survey'
+put '/surveys/:id' do
+ @survey = Survey.find(params[:id])
+ @questions = @survey.questions
+ @survey.update(title: params[:title])
+ @questions.update(title: params[:questions][:title])
+ redirect "/"
+end
 
 delete '/surveys/:id' do
   @survey = Survey.find(params[:id]).destroy
