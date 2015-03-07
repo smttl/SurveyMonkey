@@ -5,7 +5,7 @@ $(document).ready(function(){
     x+=1;
     $('.remove_question').show();
     $('.inputs').append(questionTemplate(x));
-  })
+  });
 
   $('.remove_question').on('click', function(event){
     console.log(x)
@@ -14,6 +14,11 @@ $(document).ready(function(){
     if(x === 1) {
       $('.remove_question').css("display", "none");
     }
-  })
+  });
+
+  $('.signup').on('click', function(event){
+    event.preventDefault();
+    renderPartial('.signup');
+  });
 
 })
