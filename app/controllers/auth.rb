@@ -27,7 +27,7 @@ post '/signup' do
   redirect "users/#{user.id}"
 end
 
-post '/logout' do
+get '/logout' do
   session.delete(:user_id)
   redirect '/'
 end
