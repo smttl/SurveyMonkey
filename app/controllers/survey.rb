@@ -3,8 +3,6 @@ get '/surveys/new' do
 end
 
 post '/surveys/create' do
-  p params[:questions]
-
   survey_title = params[:title]
   user = User.find(session[:user_id])
   new_survey = Survey.create(title: survey_title, user: user)
@@ -33,12 +31,12 @@ end
 put '/surveys/:id' do
  @survey = Survey.find(params[:id])
  @survey.update(title: params[:title])
- @survey.questions.update(title: params[:title])
  redirect "/"
 end
 
 delete '/surveys/:id' do
-  @survey = Survey.find(params[:id]).destroy
+  @survey = Survey.find(params[:id])
+  @survey.destroy
   redirect "/users/<%= @user.id %>"
 end
 
