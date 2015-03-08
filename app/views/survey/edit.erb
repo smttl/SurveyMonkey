@@ -16,15 +16,17 @@
         <br><br>
       </div>
     </div> -->
+    <% i = 1%>
     <% @questions.each do |question| %>
       <div>
-        <span class="input"><input type="text" name="questions[question1[title]]" value="<%= question.title %>"></span>
+        <span class="input"><input type="text" name="questions[question<%= i %>[title]]" value="<%= question.title %>"></span>
         <% index = 1 %>
         <% question.choices.each  do |choice| %>
-          <span class="input"><input type="text" name="questions[question1[choice<%= index %>]]" value="<%= choice.title %>"></span>
+          <span class="input"><input type="text" name="questions[question<%= i %>[choice<%= index %>]]" value="<%= choice.title %>"></span>
           <% index += 1 %>
         <% end %>
       </div>
+      <% i += 1 %>
     <% end %>
     <br><br>
     <input type="submit" value="Update" class="btn">

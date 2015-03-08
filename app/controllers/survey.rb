@@ -41,21 +41,24 @@ get '/surveys/:id/edit' do
   erb :'survey/edit'
 end
 
-put '/surveys/:id' do
- @survey = Survey.find(params[:id])
+put '/surveys/:id' do |x|
+ @survey = Survey.find(x)
  @questions = @survey.questions
  survey_title = params[:title]
  @survey.update(title: survey_title)
  new_questions = params[:questions]
- value = new_questions.values.first
- @questions.each do |question|
-  question.update(title: value['title'])
-  i = 1
-  question.choices.each do |choice|
-    choice.update(title: value["choice#{i}"])
-    i += 1
+ puts "WTF"
+ puts new_questions
+ i = 0
+ new_questions.each do |key, value|
+  @questions[i].update(title: value['title'])
+  j = 1
+  @questions[i].choices.each do |choice|
+    choice.update(title: value["choice#{j}"])
+    j += 1
   end
-end
+  i += 1
+ end
  redirect "/"
 end
 
