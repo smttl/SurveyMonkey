@@ -21,4 +21,21 @@ $(document).ready(function(){
     renderPartial('.signup');
   });
 
+  $('#submit_response').on('submit', function(event){
+    event.preventDefault();
+    var $target = $(event.target);
+    $.ajax({
+      url: '/take_survey',
+      type: 'post',
+      data: $target.serialize(),
+      success: function(response) {
+        if (response["output"] == 1) {
+          $('#secret_1').show();
+        } else if(response["output"] == 2) {
+          $('#secret_2').show();
+        }
+      }
+    });
+  })
+
 })

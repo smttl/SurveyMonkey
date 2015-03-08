@@ -115,3 +115,12 @@ img {
   margin-left:30%;
   margin-bottom: -20px;
 }
+
+
+#secret_1 {
+  color: green;
+}
+
+#secret_2 {
+  color: red;
+}
