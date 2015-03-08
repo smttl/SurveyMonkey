@@ -5,11 +5,11 @@
   <form action="/surveys/<%= @survey.id %>" method='POST' class="form">
     <input type="hidden" name="_method" value="PUT">
     <br><br>
-    <input type="text" name="title" placeholder="Survey Title" value="<%= @survey.title %>" />
+    <input type="text" name="title" placeholder="Survey Title" value="<%= @survey.title%>" />
     <br><br>
     <!-- <div class="inputs">
       <div class="input_container">
-        <span class="input"><input type="text" name="questions[question1[title]]" placeholder="question" value="<%= @survey.questions.first.title %>"/></span>
+        <span class="input"><input type="text" name="questions[question1[title]]" placeholder="question"/></span>
         <span class="input"><input type="text" name="questions[question1[choice1]]" placeholder="choice" class="choice"></span>
         <span class="input"><input type="text" name="questions[question1[choice2]]" placeholder="choice" class="choice"/></span>
         <span class="input"><input type="text" name="questions[question1[choice3]]" placeholder="choice" class="choice"/></span>
