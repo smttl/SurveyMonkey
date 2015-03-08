@@ -32,9 +32,8 @@ end
 
 put '/surveys/:id' do
  @survey = Survey.find(params[:id])
- @questions = @survey.questions
  @survey.update(title: params[:title])
- @questions.update(title: params[:questions][:title])
+ @survey.questions.update(title: params[:title])
  redirect "/"
 end
 
