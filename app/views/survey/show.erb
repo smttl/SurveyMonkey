@@ -2,9 +2,12 @@
 
 <div class="container">
 
+<div id='secret_1' style='display: none'>Thank you for submitting your response</div>
+<div id='secret_2' style='display: none'>Sorry, you already submitted a response to this survey</div>
+
 <h3> <%= @survey.title %> </h3>
 
-<form action="/take_survey" method="POST">
+<form action="/take_survey" method="post" id="submit_response">
   <% @questions.each do |question|%>
     <div>
       <p class="question_title"><%= question.title %>:</p>
