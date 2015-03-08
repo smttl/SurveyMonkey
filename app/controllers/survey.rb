@@ -1,8 +1,3 @@
-post '/surveys' do
-  @survey = Survey.create(params[:survey])
-  redirect 'users/<%= @user.id %>'
-end
-
 get '/surveys/new' do
   erb :form
 end
@@ -38,3 +33,28 @@ post '/surveys/create' do
   end
   redirect '/'
 end
+
+get '/surveys/:id' do
+ @survey = Survey.find(params[:id])
+ @questions = @survey.questions
+ erb :'survey/show'
+end
+
+get '/surveys/:id/edit' do
+  @survey = Survey.find(params[:id])
+  @questions = @survey.questions
+  erb :'survey/edit'
+end
+
+put '/surveys/:id' do
+ @survey = Survey.find(params[:id])
+ @survey.update(title: params[:title])
+ redirect "/"
+end
+
+delete '/surveys/:id' do
+  Survey.find(params[:id]).delete
+  redirect "/"
+end
+
+
