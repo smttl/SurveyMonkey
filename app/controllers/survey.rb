@@ -47,8 +47,6 @@ put '/surveys/:id' do |x|
  survey_title = params[:title]
  @survey.update(title: survey_title)
  new_questions = params[:questions]
- puts "WTF"
- puts new_questions
  i = 0
  new_questions.each do |key, value|
   @questions[i].update(title: value['title'])
