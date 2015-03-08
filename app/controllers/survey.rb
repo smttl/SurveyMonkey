@@ -1,8 +1,3 @@
-post '/surveys' do
-  @survey = Survey.create(params[:survey])
-  redirect 'users/<%= @user.id %>'
-end
-
 get '/surveys/new' do
   erb :form
 end
