@@ -18,7 +18,7 @@ post '/signin' do
 end
 
 get '/signup' do
-  erb :signup
+  erb :signup, layout: false
 end
 
 post '/signup' do
@@ -27,7 +27,7 @@ post '/signup' do
   redirect "users/#{user.id}"
 end
 
-post '/logout' do
+get '/logout' do
   session.delete(:user_id)
   redirect '/'
 end

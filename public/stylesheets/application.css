@@ -5,7 +5,7 @@ body {
 }
 
 .container {
-  margin: 200px auto;
+  margin: 100px auto;
   width: 600px;
   padding: 0px 20px 20px 20px;
   border: none;
@@ -39,12 +39,12 @@ a {
 .btn {
     background-color: white;
     border: 1px solid black;
-    color: #4183E8;
-    border-color: #4183E8;
+    color: #8CADB8;
+    border-color: #8CADB8;
 }
 
 .intro {
-  color: #4183E8;
+  color: #8CADB8;
 }
 
 .entry {
@@ -74,4 +74,39 @@ li {
 
 .input {
   padding-left: 10px;
+}
+
+.count {
+  color: red;
+  padding-left: 20px;
+}
+
+.response {
+  padding: 5px;
+  color: red;
+  border: solid red;
+  border-width: 1px;
+}
+
+.question_title {
+  text-decoration: underline;
+}
+
+#banner {
+  padding: 25px;
+  background-color: #8CADB8;
+}
+
+
+#survey_monkey {
+  font-size: 25px
+}
+
+#logout, #home, #create_survey {
+  float:  right;
+  margin-left: 20px;
+}
+
+.banner_text {
+  color: white;
 }
