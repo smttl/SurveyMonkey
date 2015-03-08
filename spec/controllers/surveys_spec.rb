@@ -39,6 +39,7 @@ describe "GET /surveys/:id/edit" do
     it "loads the survey edit form" do
       get "/surveys/#{survey.id}/edit"
       expect(last_response).to be_ok
+      expect(last_response.body).to include("Edit Survey")
   end
 end
 
