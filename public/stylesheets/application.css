@@ -110,3 +110,8 @@ li {
 .banner_text {
   color: white;
 }
+
+img {
+  margin-left:30%;
+  margin-bottom: -20px;
+}
