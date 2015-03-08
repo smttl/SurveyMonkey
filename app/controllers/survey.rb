@@ -15,6 +15,7 @@ get '/surveys/:id/stats' do
  erb :'survey/stats'
 end
 
+
 post '/surveys/create' do
   survey_title = params[:title]
   user = User.find(session[:user_id])
