@@ -15,10 +15,6 @@ get '/surveys/:id/stats' do
  erb :'survey/stats'
 end
 
-delete '/surveys/:id' do
-  @survey = Survey.find(id).destroy
-  redirect 'users/<%= @user.id %>'
-end
 
 post '/surveys/create' do
   survey_title = params[:title]

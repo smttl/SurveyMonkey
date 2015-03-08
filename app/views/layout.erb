@@ -13,13 +13,14 @@
 <body>
   <% if session[:user_id]%>
   <div id="banner">
-    <span id="survey_monkey"><a class="banner_text" href="/">SurveyMonkey</a></span>
+    <span id="survey_monkey"><a class="banner_text" href="/">EasternMonkey</a></span>
     <span id="logout"><a  class="banner_text" href="/logout">Logout</a></span>
     <span id="create_survey"><a class="banner_text" href="/surveys/new">Create Survey</a></span>
     <span id="home"><a class="banner_text" href="/">Home</a></span>
   </div>
   <%else %>
   <div id="banner">
+    <h1> Eastern Monkey </h1>
   </div>
   <%end%>
 
