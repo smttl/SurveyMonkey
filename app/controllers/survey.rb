@@ -16,7 +16,7 @@ get '/surveys/:id/stats' do
 end
 
 delete '/surveys/:id' do
-  Survey.find(id).destroy
+  @survey = Survey.find(id).destroy
   redirect 'users/<%= @user.id %>'
 end
 

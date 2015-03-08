@@ -10,9 +10,18 @@ describe "Survey Controller" do
   end
 end
 
+describe "POST /surveys/create" do
+    it "creates a new survey " do
+      post "/surveys/create", params={survey:{title: "Demo", user_id: 1}}
+      expect(last_response).to be_redirect
+      follow_redirect!
+      expect(last_request.path).to eq("/")
+  end
+end
+
 describe "GET /surveys/:id" do
     it "loads the survey with that id" do
-      get "/surveys/#{survey.id}", params={survey:{title: "Demo"}}
+      get "/surveys/#{survey.id}"
       expect(last_response).to be_ok
   end
 end
@@ -24,25 +33,17 @@ describe "GET /surveys/:id/stats" do
   end
 end
 
-describe "POST /surveys/create" do
-    it "creates a new survey " do
-      post "/surveys/create", params={survey:{title: "Demo", user_id: 1}}
-      expect(last_response).to be_redirect
-      follow_redirect!
-      expect(last_request.path).to eq("/")
-  end
-end
 
 describe "GET /surveys/:id/edit" do
     it "loads the survey edit form" do
-      get "/surveys/#{survey.id}/edit", params={survey:{title: "Demo"}}
-      expect(last_response).to be_ok
+      get "/surveys/#{survey.id}/edit"
+      expect(last_response.body).to include("Edit Survey")
   end
 end
 
 describe "DELETE /surveys/:id" do
     it "deletes the specific survey" do
-      delete "/surveys/:id"
+      delete "/surveys/#{survey.id}"
       expect(last_response).to be_redirect
       follow_redirect!
       expect(last_request.path).to eq("/")
