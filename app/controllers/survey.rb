@@ -15,11 +15,6 @@ get '/surveys/:id/stats' do
  erb :'survey/stats'
 end
 
-delete '/surveys/:id' do
-  @survey = Survey.find(id).destroy
-  redirect 'users/<%= @user.id %>'
-end
-
 post '/surveys/create' do
   survey_title = params[:title]
   user = User.find(session[:user_id])
@@ -48,7 +43,19 @@ end
 
 put '/surveys/:id' do
  @survey = Survey.find(params[:id])
- @survey.update(title: params[:title])
+ @questions = @survey.questions
+ survey_title = params[:title]
+ @survey.update(title: survey_title)
+ new_questions = params[:questions]
+ value = new_questions.values.first
+ @questions.each do |question|
+  question.update(title: value['title'])
+  i = 1
+  question.choices.each do |choice|
+    choice.update(title: value["choice#{i}"])
+    i += 1
+  end
+end
  redirect "/"
 end
 
