@@ -1,9 +1,6 @@
 require ::File.expand_path('../environment', __FILE__)
 
 require 'rake'
-require 'jasmine'
-
-load 'jasmine/tasks/jasmine.rake'
 
 desc 'Start IRB with application environment loaded'
 task "console" do
