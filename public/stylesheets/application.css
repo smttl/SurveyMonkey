@@ -39,12 +39,12 @@ a {
 .btn {
     background-color: white;
     border: 1px solid black;
-    color: #8CADB8;
-    border-color: #8CADB8;
+    color: #86a32d;
+    border-color: #86a32d;
 }
 
 .intro {
-  color: #8CADB8;
+  color: #86a32d;
 }
 
 .entry {
@@ -94,7 +94,7 @@ li {
 
 #banner {
   padding: 25px;
-  background-color: #8CADB8;
+  background-color: #86a32d;
 }
 
 
