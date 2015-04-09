@@ -8,19 +8,19 @@
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.5/angular.min.js"></script>
   <script src='/javascripts/controller.js'></script>
   <script src='/javascripts/view.js'></script>
-  <title><%= @title || "SurveyMonkey" %></title>
+  <title><%= @title || "SurveyDonkey" %></title>
 </head>
 <body>
   <% if session[:user_id]%>
   <div id="banner">
-    <span id="survey_monkey"><a class="banner_text" href="/">SurveyMonkey</a></span>
+    <span id="survey_monkey"><a class="banner_text" href="/">SurveyDonkey</a></span>
     <span id="logout"><a  class="banner_text" href="/logout">Logout</a></span>
     <span id="create_survey"><a class="banner_text" href="/surveys/new">Create Survey</a></span>
     <span id="home"><a class="banner_text" href="/">Home</a></span>
   </div>
   <%else %>
   <div id="banner">
-    <span id="survey_monkey"><a class="banner_text" href="/">SurveyMonkey</a></span>
+    <span id="survey_monkey"><a class="banner_text" href="/">SurveyDonkey</a></span>
   </div>
   <%end%>
 
